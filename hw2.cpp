@@ -51,15 +51,39 @@ class student
 	{
 		if( x > 0  && x < 5)
 		 	year_of_study = x;
+		else
+			cout << "Incorrect input. Try a value between 1 and 4\n";
 	}
 
-	student()
+	student(char* flname, bool gend, int year)
 	{
 		student_id = student::next_id++;
+		gender = gend;
+		year_of_study = year;
 	}
 };
 
 int student::next_id = 0;
+
+void addRec()
+{
+	cout << "In addRec\n";
+}
+
+void listRec()
+{
+	cout << "In listRec\n";
+}
+
+void modRec()
+{
+	cout << "In modRec\n";
+}
+
+void delRec()
+{
+	cout << "In delRec\n";
+}
 
 void printMenu()
 {
@@ -76,7 +100,28 @@ void printMenu()
 		cout << "Select Your Choice :=> ";
 
 		cin >> choice;
-		cout << choice << "\n\n";
+		//cout << choice << "\n\n";
+
+		switch(choice)
+		{
+			case 1:
+				addRec();
+			break;
+			case 2:
+				listRec();
+			break;
+			case 3:
+				modRec();
+			break;
+			case 4:
+				delRec();
+			break;
+			case 5:
+			break;
+			default:
+			cout << "Invalid solution, please try again\n\n";
+			break;
+		}
 	}
 	cout << "\n\n\tThank you very much for using the Student Database Management System\n\n";
 
